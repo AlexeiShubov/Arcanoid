@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: Entities
   m_EditorClassIdentifier: 
   _entitiesList:
-  - Prefab: {fileID: 0}
+  - Prefab: {fileID: 5276238399109247413, guid: 5bcd505392c585c478d64ac9189e9ec0, type: 3}
     Count: 10
-    Tag: YellowBlock
-  - Prefab: {fileID: 0}
+  - Prefab: {fileID: 5276238399109247413, guid: 5bcd505392c585c478d64ac9189e9ec0, type: 3}
     Count: 10
-    Tag: GreenBlock

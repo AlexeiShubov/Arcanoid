@@ -1,15 +1,29 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+
+[Serializable]
+public class PoolEntity
+{
+     public AbstractBlock Prefab;
+     public int Count;
+
+     public PoolEntity(AbstractBlock prefab, int count)
+     {
+          Prefab = prefab;
+          Count = count;
+     }
+}
 
 public class ObjectPool
 {
      private EntitySO _entitySO;
-     private Dictionary<string, Queue<Transform>> _poolMap;
+     private Dictionary<string, Queue<AbstractBlock>> _poolMap;
      private Transform _parentForEntities;
 
      public ObjectPool(EntitySO entitySO, Transform parentForEntities)
      {
-          _poolMap = new Dictionary<string, Queue<Transform>>();
+          _poolMap = new Dictionary<string, Queue<AbstractBlock>>();
           _entitySO = entitySO;
           _parentForEntities = parentForEntities;
 
@@ -20,21 +34,21 @@ public class ObjectPool
      {
           foreach (var entity in entitySO.EntitiesList)
           {
-               AddEntityToMap(entity);
+               AddBlockToMap(entity);
           }
      }
 
-     private void AddEntityToMap(PoolEntity poolEntity)
+     private void AddBlockToMap(PoolEntity poolEntity)
      {
-          if (!_poolMap.ContainsKey(poolEntity.Tag))
+          if (!_poolMap.ContainsKey(poolEntity.Prefab.Tag))
           {
-               _poolMap.Add(poolEntity.Tag, GenerateQueueEntities(poolEntity));
+               _poolMap.Add(poolEntity.Prefab.Tag, GenerateBlocksToPool(poolEntity));
           }
      }
 
-     private Queue<Transform> GenerateQueueEntities(PoolEntity poolEntity)
+     private Queue<AbstractBlock> GenerateBlocksToPool(PoolEntity poolEntity)
      {
-          var newQueue = new Queue<Transform>();
+          var newQueue = new Queue<AbstractBlock>();
           var factory = new AbstractFactory(poolEntity.Prefab, Vector2.zero, _parentForEntities);
           
           for (var i = 0; i < poolEntity.Count; i++)

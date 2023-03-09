@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e54eaf3c67b79244aa198bc8d2e7c72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popupTag: 1
   rectTransform: {fileID: 5119182753177529384}
 --- !u!1 &5844320148615738465
 GameObject:
@@ -405,7 +404,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 7698f7cb648ed8b46aed9c342e58b0a7, type: 3}
     - target: {fileID: 7490551838781497033, guid: c3bac54e59e24b649b9b46b16efcc08d, type: 3}
       propertyPath: m_Transition
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7490551838781497033, guid: c3bac54e59e24b649b9b46b16efcc08d, type: 3}
       propertyPath: m_Interactable
@@ -544,7 +543,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 7698f7cb648ed8b46aed9c342e58b0a7, type: 3}
     - target: {fileID: 7490551838781497033, guid: c3bac54e59e24b649b9b46b16efcc08d, type: 3}
       propertyPath: m_Transition
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 636033780910654358, guid: c3bac54e59e24b649b9b46b16efcc08d, type: 3}

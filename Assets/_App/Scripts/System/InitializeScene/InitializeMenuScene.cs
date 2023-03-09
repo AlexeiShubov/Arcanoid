@@ -9,6 +9,6 @@ public class InitializeMenuScene : MonoBehaviour
     private void Awake()
     {
         _localization = new Localization();
-        new GameObjectFactory<PopupManager>(_popupManager).Spawn(true).Init();
+        _popupManager.Init();
     }
 }

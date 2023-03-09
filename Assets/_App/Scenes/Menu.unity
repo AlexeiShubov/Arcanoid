@@ -132,8 +132,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1398083136}
-  - component: {fileID: 1398083134}
   - component: {fileID: 1398083135}
+  - component: {fileID: 1398083134}
   m_Layer: 0
   m_Name: Initialize
   m_TagString: Untagged
@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41129a61365f63645aca39dd68b231fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuPopupManager: {fileID: 3513787489535917739, guid: e01ae19f143ac5745abee6167325b3ce, type: 3}
+  _popupManager: {fileID: 2384712233325585979, guid: e01ae19f143ac5745abee6167325b3ce, type: 3}
 --- !u!114 &1398083135
 MonoBehaviour:
   m_ObjectHideFlags: 0

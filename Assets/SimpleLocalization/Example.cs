@@ -27,7 +27,7 @@ namespace Assets.SimpleLocalization
 					LocalizationManager.Language = "Russian";
 					break;
 				default:
-					LocalizationManager.Language = "English";
+					LocalizationManager.Language = "SelectLanguage";
 					break;
 			}
 

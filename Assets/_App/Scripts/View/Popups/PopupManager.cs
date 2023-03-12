@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PopupManager : MonoBehaviour
 {
@@ -7,8 +8,9 @@ public class PopupManager : MonoBehaviour
     
     [SerializeField] private List<ObjectPoolEntityPopup> _poolEntity;
 
-    private ObjectPoolPopup _objectPool;
+    private ObjectPoolPopup _objectPoolPopup;
     private Stack<AbstractPopup> _openWindows;
+    private Localization _localization;
 
     private void Awake()
     {
@@ -16,6 +18,8 @@ public class PopupManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            
+            Init();
 
             return;
         }
@@ -25,20 +29,54 @@ public class PopupManager : MonoBehaviour
 
     public void Init()
     {
-        _objectPool = new ObjectPoolPopup(_poolEntity, transform);
+        _localization = new Localization();
+        _objectPoolPopup = new ObjectPoolPopup(_poolEntity, transform);
         _openWindows = new Stack<AbstractPopup>();
 
-        if (!_objectPool.TryGetObject(typeof(UIStartPopup), out AbstractPopup obj)) return;
+        if (!_objectPoolPopup.TryGetObject(typeof(UIStartPopup), out AbstractPopup obj)) return;
         
         obj.Show();
         _openWindows.Push(obj);
     }
 
+    public void ChangeLanguage(Localization.Languages language)
+    {
+        _localization.SetLanguage(language);
+    }
+
+    public void OnButtonDown(ButtonNamesEnum buttonName)
+    {
+        switch (buttonName)
+        {
+            case ButtonNamesEnum.Play:
+                SceneManager.LoadScene("Game");
+                
+                break;
+            case ButtonNamesEnum.Language:
+                if (_objectPoolPopup.TryGetObject(typeof(UILanguagePopup), out AbstractPopup languagePopup))
+                {
+                    languagePopup.Show();
+                    _openWindows.Push(languagePopup);
+                }
+                
+                break;
+            case ButtonNamesEnum.SelectLanguage:
+                var currentPopup = _openWindows.Pop();
+                currentPopup.Hide();
+                _objectPoolPopup.TryReturnObject(typeof(UILanguagePopup), currentPopup);
+                
+                break;
+        }
+    }
+    
     private void CloseAllWindows()
     {
         while (_openWindows.Count > 0)
         {
-            _openWindows.Pop().Hide();
+            var currentPopup = _openWindows.Pop();
+            
+            currentPopup.Hide();
+            _objectPoolPopup.TryReturnObject(currentPopup.GetType(), currentPopup);
         }
     }
 }

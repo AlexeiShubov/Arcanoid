@@ -17,6 +17,6 @@ public abstract class AbstractPopup : MonoBehaviour
 
     public virtual void Hide()
     {
-        gameObject.SetActive(true);
+        gameObject.SetActive(false);
     }
 }

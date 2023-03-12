@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5661630470638034229}
   - component: {fileID: 4295160208541067584}
   - component: {fileID: 2384712233325585979}
+  - component: {fileID: -4949273828380283438}
   m_Layer: 0
   m_Name: MenuPopupManager
   m_TagString: Untagged
@@ -122,6 +123,54 @@ MonoBehaviour:
     _count: 1
     _autoExpand: 0
     _prefab: {fileID: 1816742292306247465, guid: 65f90a7826df65040bb7f054bcb0e2b3, type: 3}
+--- !u!114 &-4949273828380283438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7358676273360328599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1500ef95756e0e84aa62dc24f288c7d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventContainers:
+  - {fileID: 11400000, guid: 1eee7d4282600924dbf435e6b8b723d4, type: 2}
+  - {fileID: 11400000, guid: 094ce6c0318a3da4281a8b9c1936c731, type: 2}
+  - {fileID: 11400000, guid: 52dda5ee088c2244a81888f4e11d8769, type: 2}
+  - {fileID: 11400000, guid: 7172f7333cf02724097a3fe49aab23f9, type: 2}
+  - {fileID: 11400000, guid: fc89d8e13fdb1b24d9e7e126b6ad6b2e, type: 2}
+  action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2384712233325585979}
+        m_TargetAssemblyTypeName: PopupManager, Assembly-CSharp
+        m_MethodName: ChangeLanguage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  buttonAction:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2384712233325585979}
+        m_TargetAssemblyTypeName: PopupManager, Assembly-CSharp
+        m_MethodName: OnButtonDown
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7358676274350634112
 GameObject:
   m_ObjectHideFlags: 0

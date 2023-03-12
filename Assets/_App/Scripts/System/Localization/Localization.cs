@@ -1,5 +1,4 @@
 using Assets.SimpleLocalization;
-using UnityEngine;
 
 public class Localization
 {
@@ -9,11 +8,6 @@ public class Localization
         Russian
     }
 
-    public Localization()
-    {
-        LocalizationManager.Language = Application.systemLanguage.ToString();
-    }
-    
     public void SetLanguage(Languages languages)
     {
         LocalizationManager.Read();

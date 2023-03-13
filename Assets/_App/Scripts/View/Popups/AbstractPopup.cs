@@ -9,14 +9,13 @@ public abstract class AbstractPopup : MonoBehaviour
         
     }
 
-    public virtual void Show()
+    public virtual void Show(IShowing animator)
     {
-        gameObject.SetActive(true);
-        gameObject.transform.SetAsLastSibling();
+        animator.Show();
     }
 
-    public virtual void Hide()
+    public virtual void Hide(IShowing animator)
     {
-        gameObject.SetActive(true);
+        animator.Hide();
     }
 }

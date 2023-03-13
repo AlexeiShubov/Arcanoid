@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,22 +6,24 @@ public class UIStartPopup : AbstractPopup
     [SerializeField] private Button playButton;
     [SerializeField] private Button languageButton;
 
-    public event Action OnClickPlayButton;
-    public event Action OnClickLanguageButton;
-
     public override void Init()
     {
-        playButton.onClick.AddListener(OnClickPlayButton.Invoke);
-        languageButton.onClick.AddListener(OnClickLanguageButton.Invoke);
+        Subscribe();
     }
 
-    public override void Show()
+    public override void Show(IShowing animator)
     {
-        base.Show();
+        base.Show(animator);
     }
 
-    public override void Hide()
+    public override void Hide(IShowing animator)
     {
-        base.Hide();
+        base.Hide(animator);
+    }
+
+    private void Subscribe()
+    {
+        playButton.onClick.AddListener(() => PopupManager.Instance.OnButtonClick(ButtonNames.Play));
+        languageButton.onClick.AddListener(() => PopupManager.Instance.OnButtonClick(ButtonNames.Language));
     }
 }

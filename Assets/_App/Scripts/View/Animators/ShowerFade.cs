@@ -2,20 +2,23 @@ using UnityEngine;
 
 public class ShowerFade : IShowing
 {
-    private readonly RectTransform _rectTransform;
+    private readonly Transform _transform;
 
-    public ShowerFade(RectTransform rectTransform)
+    public ShowerFade(Transform rectTransform)
     {
-        _rectTransform = rectTransform;
+        _transform = rectTransform;
     }
     
     public void Show()
     {
-        Debug.Log($"{nameof(GetType)} Show {_rectTransform.gameObject.name}");
+        _transform.SetAsLastSibling();
+        _transform.gameObject.SetActive(true);
+        Debug.Log($"{nameof(GetType)} Show: {_transform.gameObject.name}");
     }
 
     public void Hide()
     {
-        Debug.Log($"{nameof(GetType)} Hide {_rectTransform.gameObject.name}");
+        Debug.Log($"{nameof(GetType)} Hide: {_transform.gameObject.name}");
+        _transform.gameObject.SetActive(false);
     }
 }

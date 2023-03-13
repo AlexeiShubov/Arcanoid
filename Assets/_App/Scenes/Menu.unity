@@ -130,6 +130,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2384712233325585979, guid: e01ae19f143ac5745abee6167325b3ce, type: 3}
+      propertyPath: poolEntity.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2384712233325585979, guid: e01ae19f143ac5745abee6167325b3ce, type: 3}
+      propertyPath: poolEntity.Array.data[0]._count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2384712233325585979, guid: e01ae19f143ac5745abee6167325b3ce, type: 3}
+      propertyPath: poolEntity.Array.data[1]._count
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2384712233325585979, guid: e01ae19f143ac5745abee6167325b3ce, type: 3}
+      propertyPath: poolEntity.Array.data[0]._prefab
+      value: 
+      objectReference: {fileID: -9053102709742618755, guid: f04fa3be3aefa334c86917ad8cccf59a, type: 3}
+    - target: {fileID: 2384712233325585979, guid: e01ae19f143ac5745abee6167325b3ce, type: 3}
+      propertyPath: poolEntity.Array.data[1]._prefab
+      value: 
+      objectReference: {fileID: 1816742292306247465, guid: 65f90a7826df65040bb7f054bcb0e2b3, type: 3}
     - target: {fileID: 5470254141520416020, guid: e01ae19f143ac5745abee6167325b3ce, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -258,7 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41129a61365f63645aca39dd68b231fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _popupManager: {fileID: 1418645892}
 --- !u!114 &1398083135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -373,14 +392,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1418645892 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2384712233325585979, guid: e01ae19f143ac5745abee6167325b3ce, type: 3}
-  m_PrefabInstance: {fileID: 673714429}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cdb08dfeb2e9e64d93b2d6989367f2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

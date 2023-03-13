@@ -22,6 +22,7 @@ public class ObjectPoolPopup : ObjectPoolMono<Type, AbstractPopup>
             for (var i = 0; i < popup.Count; i++)
             {
                 var newPopup = new GameObjectFactory<AbstractPopup>(popup.Prefab, _parent).Spawn();
+                newPopup.Init();
 
                 if (!TryAddObject(popup.Prefab.GetType(), newPopup))
                 {

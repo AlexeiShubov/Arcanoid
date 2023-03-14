@@ -3,5 +3,9 @@ public enum ButtonNames
     Play,
     Language,
     Russian,
-    English
+    English,
+    GameMenu,
+    Restart,
+    Continue,
+    GameBack
 }

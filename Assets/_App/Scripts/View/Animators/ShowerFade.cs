@@ -13,12 +13,10 @@ public class ShowerFade : IShowing
     {
         _transform.SetAsLastSibling();
         _transform.gameObject.SetActive(true);
-        Debug.Log($"{nameof(GetType)} Show: {_transform.gameObject.name}");
     }
 
     public void Hide()
     {
-        Debug.Log($"{nameof(GetType)} Hide: {_transform.gameObject.name}");
         _transform.gameObject.SetActive(false);
     }
 }

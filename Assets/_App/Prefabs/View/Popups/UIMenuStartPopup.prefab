@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5289256464664672009}
   - component: {fileID: -9053102709742618755}
   m_Layer: 5
-  m_Name: UIStartPopup
+  m_Name: UIMenuStartPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
